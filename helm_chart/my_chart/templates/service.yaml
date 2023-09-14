@@ -1,15 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "my_chart.fullname" . }}
-  labels:
-    {{- include "my_chart.labels" . | nindent 4 }}
+    name: cip-ipapp
 spec:
-  type: {{ .Values.service.type }}
-  ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
-  selector:
-    {{- include "my_chart.selectorLabels" . | nindent 4 }}
+    selector:
+        app: ip-app
+    ports:
+      - name: http
+        port: 8090
+        targetPort: 8080
