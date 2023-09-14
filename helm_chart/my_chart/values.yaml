@@ -1,2 +1,2 @@
 deploymentOne:
-      deploymentReplicas: 2
+      deploymentReplicas: 10
